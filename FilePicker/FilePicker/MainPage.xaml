@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             Title="Demo for Xam.Plugin.FilePicker"
+             x:Class="FilePicker.MainPage">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*,Auto"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              RowSpacing="0">
+
+            <Frame
+                Grid.Row="0"
+                Margin="10,2"
+                Padding="0"
+                CornerRadius="15"
+                BackgroundColor="LightGreen"
+                BorderColor="Green">
+                <StackLayout
+                    Margin="10,2"
+                    Padding="5,0">
+                    <Button
+                        x:Name="PickAFile"
+                        Clicked="PickAFile_Clicked"
+                        Text="Pick a Text File to Read"
+                        Padding="5,0"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                Grid.Row="1"
+                Margin="10,2"
+                CornerRadius="15"
+                BackgroundColor="LightGray"
+                BorderColor="DarkGray"
+                Padding="0">
+                <StackLayout>
+                    <StackLayout
+                        Margin="2"
+                        Orientation="Horizontal">
+                        <Label
+                            Text="Contents of: "
+                            Margin="10,0,5,0"
+                            VerticalOptions="Center"
+                            FontSize="Micro"
+                            FontAttributes="Bold" />
+                        <Entry 
+                            x:Name="FileName"
+                            Text="Name of File"
+                            Margin="0,0,10,0"
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand"
+                            FontSize="Micro" />
+                    </StackLayout>
+
+                    <ScrollView
+                        VerticalScrollBarVisibility="Always"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand">
+                        <Editor
+                            x:Name="FileContents"
+                            BackgroundColor="Transparent"
+                            Margin="5,0"
+                            HeightRequest="400"
+                            WidthRequest="400"
+                            VerticalOptions="StartAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            FontSize="Small" />
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                Grid.Row="2"
+                Margin="10,2"
+                CornerRadius="15"
+                BackgroundColor="LightGreen"
+                BorderColor="Green"
+                Padding="0">
+                <StackLayout
+                    Margin="10,2"
+                    Padding="5,0">
+                    <Button
+                        x:Name="SaveFile"
+                        Clicked="SaveFile_Clicked"
+                        Text="Save to a Text File"
+                        Padding="5,0"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
